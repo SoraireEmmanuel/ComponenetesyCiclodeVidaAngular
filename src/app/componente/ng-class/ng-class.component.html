@@ -12,9 +12,14 @@ success
 </button>
 <br>
 <h3 [ngClass]="{'text-danger': propiedades,'text-info':!propiedades}">hola mundo</h3>
-<button class="btn btn-danger" (click)="propiedades=true">
-    Cambiar a rojo
+<button class="btn " [ngClass]="{'btn-primary':!propiedades,'btn-danger':propiedades}" (click)="propiedades=!propiedades">
+    <span *ngIf="!propiedades">Cambiar a rojo</span>
+    <span *ngIf="propiedades">Cambiar a azul</span>
 </button>
-<button class="btn btn-primary" (click)="propiedades=false">
-    Cambiar a azul
-</button>
+
+<br><br>
+<button class="btn btn-primary" type="button" name="button" (click)="ejecutar()" [disabled]="loading">
+    <span *ngIf="!loading">Guardar Cambios </span>
+    <span *ngIf="loading">Espere por Favor </span>
+    <i [ngClass]="{'fa-save':!loading,'fa-refresh fa-spin':loading}" class="fa"> </i>
+    </button>
