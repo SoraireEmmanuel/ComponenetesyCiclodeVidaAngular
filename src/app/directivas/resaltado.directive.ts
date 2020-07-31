@@ -13,13 +13,15 @@ export class ResaltadoDirective {
   @Input() color:string;
 
   @HostListener('mouseenter') mauseEntro(){
-    this.el.nativeElement.style.backgroundColor="gray";
+    //this.el.nativeElement.style.backgroundColor="gray";
+    this.el.nativeElement.style.opacity="0.5";
     console.log(this.color);
     this.resaltar(this.color);
   }
   @HostListener('mouseleave') mauseFuera(){
     this.el.nativeElement.style.backgroundColor=null;
     this.resaltar(null);
+    this.el.nativeElement.style.opacity="1";
   }
 
   private resaltar(color:string){

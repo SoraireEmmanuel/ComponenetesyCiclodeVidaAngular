@@ -1,0 +1,36 @@
+<div [ngSwitch]="alerta">
+    <div *ngSwitchCase="'success'">success</div>
+    <div *ngSwitchCase="'info'">info</div>
+    <div *ngSwitchCase="'warning'">warning</div>
+    <div *ngSwitchDefault>danger</div>
+</div>
+<div [ngSwitch]='alerta'>
+    <div class="alert alert-success" role="alert" *ngSwitchCase="'success'">
+        This is a success alert—check it out!
+    </div>
+    <div class="alert alert-danger" role="alert" *ngSwitchCase="'danger'">
+        This is a danger alert—check it out!
+    </div>
+    <div class="alert alert-warning" role="alert" *ngSwitchCase="'warning'">
+        This is a warning alert—check it out!
+    </div>
+    <div class="alert alert-info" role="alert" *ngSwitchCase="'info'">
+        This is a info alert—check it out!
+    </div>
+    <div class="alert alert-light" role="alert" *ngSwitchCase="'light'">
+        This is a light alert—check it out!
+    </div>
+    <div class="alert alert-dark" role="alert" *ngSwitchDefault>
+        This is a dark alert—check it out!
+    </div>
+</div>
+
+<p>Elije el estilo de la alerta</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+
+    <button class="btn-success" appResaltado (click)="alerta='success'">success</button>
+    <button class="btn-danger" appResaltado (click)="alerta='danger'">danger</button>
+    <button class="btn-warning" appResaltado (click)="alerta='warning'">warning</button>
+    <button class="btn-info" appResaltado (click)="alerta='info'">info</button>
+    <button class="btn-light" appResaltado (click)="alerta='light'">light</button>
+</div>
